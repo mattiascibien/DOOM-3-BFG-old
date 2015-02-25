@@ -21,9 +21,6 @@
     <ClCompile Include="libs\glew\glew.c">
       <Filter>glew</Filter>
     </ClCompile>
-    <ClCompile Include="libs\jpeg-9a\ckconfig.c">
-      <Filter>jpeg-9a</Filter>
-    </ClCompile>
     <ClCompile Include="libs\jpeg-9a\jaricom.c">
       <Filter>jpeg-9a</Filter>
     </ClCompile>

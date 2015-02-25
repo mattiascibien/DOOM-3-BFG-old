@@ -16,7 +16,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="libs\glew\glew.c" />
-    <ClCompile Include="libs\jpeg-9a\ckconfig.c" />
     <ClCompile Include="libs\jpeg-9a\jaricom.c" />
     <ClCompile Include="libs\jpeg-9a\jcapimin.c" />
     <ClCompile Include="libs\jpeg-9a\jcapistd.c" />
