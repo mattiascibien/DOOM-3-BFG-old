@@ -1342,7 +1342,7 @@ void GLimp_SwapBuffers() {
 			interval = 1;
 		}
 
-		if (wglSwapIntervalEXT) {
+		if (WGLEW_EXT_swap_control) {
 			wglSwapIntervalEXT(interval);
 		}
 	}
