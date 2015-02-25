@@ -64,11 +64,15 @@
     <ClCompile Include="libs\jpeg-9a\jquant2.c" />
     <ClCompile Include="libs\jpeg-9a\jutils.c" />
     <ClCompile Include="libs\jpeg-9a\transupp.c" />
+    <ClCompile Include="libs\dxerr\dxerr.cpp" />
     <ClCompile Include="libs\zlib\adler32.c" />
     <ClCompile Include="libs\zlib\compress.c" />
     <ClCompile Include="libs\zlib\crc32.c" />
     <ClCompile Include="libs\zlib\deflate.c" />
-    <ClCompile Include="libs\zlib\gzio.c" />
+    <ClCompile Include="libs\zlib\gzclose.c" />
+    <ClCompile Include="libs\zlib\gzlib.c" />
+    <ClCompile Include="libs\zlib\gzread.c" />
+    <ClCompile Include="libs\zlib\gzwrite.c" />
     <ClCompile Include="libs\zlib\infback.c" />
     <ClCompile Include="libs\zlib\inffast.c" />
     <ClCompile Include="libs\zlib\inflate.c" />
@@ -76,7 +80,6 @@
     <ClCompile Include="libs\zlib\trees.c" />
     <ClCompile Include="libs\zlib\uncompr.c" />
     <ClCompile Include="libs\zlib\zutil.c" />
-    <ClCompile Include="libs\dxerr\dxerr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libs\dxerr\dxerr.h" />
@@ -91,6 +94,17 @@
     <ClInclude Include="libs\jpeg-9a\jpeglib.h" />
     <ClInclude Include="libs\jpeg-9a\jversion.h" />
     <ClInclude Include="libs\jpeg-9a\transupp.h" />
+    <ClInclude Include="libs\zlib\crc32.h" />
+    <ClInclude Include="libs\zlib\deflate.h" />
+    <ClInclude Include="libs\zlib\gzguts.h" />
+    <ClInclude Include="libs\zlib\inffast.h" />
+    <ClInclude Include="libs\zlib\inffixed.h" />
+    <ClInclude Include="libs\zlib\inflate.h" />
+    <ClInclude Include="libs\zlib\inftrees.h" />
+    <ClInclude Include="libs\zlib\trees.h" />
+    <ClInclude Include="libs\zlib\zconf.h" />
+    <ClInclude Include="libs\zlib\zlib.h" />
+    <ClInclude Include="libs\zlib\zutil.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B679FDA2-CB76-4348-906B-4CAA294195FD}</ProjectGuid>
