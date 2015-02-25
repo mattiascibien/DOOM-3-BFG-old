@@ -16,6 +16,9 @@
     <Filter Include="minizip">
       <UniqueIdentifier>{e9d3a4dd-bd5c-4c9e-830d-218baceea6e5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="timidity">
+      <UniqueIdentifier>{45adcb5e-4c21-4195-9d79-120fc17573b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="libs\dxerr\dxerr.cpp">
@@ -225,6 +228,45 @@
     <ClCompile Include="libs\minizip\zip.c">
       <Filter>minizip</Filter>
     </ClCompile>
+    <ClCompile Include="libs\timidity\common.cpp">
+      <Filter>timidity</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\timidity\controls.cpp">
+      <Filter>timidity</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\timidity\filter.cpp">
+      <Filter>timidity</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\timidity\instrum.cpp">
+      <Filter>timidity</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\timidity\mix.cpp">
+      <Filter>timidity</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\timidity\output.cpp">
+      <Filter>timidity</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\timidity\playmidi.cpp">
+      <Filter>timidity</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\timidity\readmidi.cpp">
+      <Filter>timidity</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\timidity\resample.cpp">
+      <Filter>timidity</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\timidity\sdl_a.cpp">
+      <Filter>timidity</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\timidity\sdl_c.cpp">
+      <Filter>timidity</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\timidity\tables.cpp">
+      <Filter>timidity</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\timidity\timidity.cpp">
+      <Filter>timidity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libs\dxerr\dxerr.h">
@@ -313,6 +355,45 @@
     </ClInclude>
     <ClInclude Include="libs\minizip\zip.h">
       <Filter>minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\timidity\common.h">
+      <Filter>timidity</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\timidity\config.h">
+      <Filter>timidity</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\timidity\controls.h">
+      <Filter>timidity</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\timidity\filter.h">
+      <Filter>timidity</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\timidity\instrum.h">
+      <Filter>timidity</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\timidity\mix.h">
+      <Filter>timidity</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\timidity\output.h">
+      <Filter>timidity</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\timidity\playmidi.h">
+      <Filter>timidity</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\timidity\readmidi.h">
+      <Filter>timidity</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\timidity\resample.h">
+      <Filter>timidity</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\timidity\structs.h">
+      <Filter>timidity</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\timidity\tables.h">
+      <Filter>timidity</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\timidity\timidity.h">
+      <Filter>timidity</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
