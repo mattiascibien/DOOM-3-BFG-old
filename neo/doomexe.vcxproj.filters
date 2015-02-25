@@ -264,18 +264,6 @@
     <ClInclude Include="aas\AASFileManager.h">
       <Filter>AAS</Filter>
     </ClInclude>
-    <ClInclude Include="renderer\OpenGL\glext.h">
-      <Filter>Renderer\OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="renderer\OpenGL\qgl.h">
-      <Filter>Renderer\OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="renderer\OpenGL\qgl_linked.h">
-      <Filter>Renderer\OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="renderer\OpenGL\wglext.h">
-      <Filter>Renderer\OpenGL</Filter>
-    </ClInclude>
     <ClInclude Include="sys\win32\win_local.h">
       <Filter>Sys\Win32</Filter>
     </ClInclude>
@@ -795,9 +783,6 @@
       <Filter>Sys\Win32</Filter>
     </ClCompile>
     <ClCompile Include="sys\win32\win_net.cpp">
-      <Filter>Sys\Win32</Filter>
-    </ClCompile>
-    <ClCompile Include="sys\win32\win_qgl.cpp">
       <Filter>Sys\Win32</Filter>
     </ClCompile>
     <ClCompile Include="sys\win32\win_shared.cpp">

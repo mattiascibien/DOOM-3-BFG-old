@@ -206,10 +206,6 @@
     <ClInclude Include="renderer\ModelDecal.h" />
     <ClInclude Include="renderer\ModelManager.h" />
     <ClInclude Include="renderer\ModelOverlay.h" />
-    <ClInclude Include="renderer\OpenGL\glext.h" />
-    <ClInclude Include="renderer\OpenGL\qgl.h" />
-    <ClInclude Include="renderer\OpenGL\qgl_linked.h" />
-    <ClInclude Include="renderer\OpenGL\wglext.h" />
     <ClInclude Include="renderer\RenderContext.h" />
     <ClInclude Include="renderer\RenderLog.h" />
     <ClInclude Include="renderer\RenderProgs.h" />
@@ -484,7 +480,6 @@
     <ClCompile Include="sys\win32\win_localuser.cpp" />
     <ClCompile Include="sys\win32\win_main.cpp" />
     <ClCompile Include="sys\win32\win_net.cpp" />
-    <ClCompile Include="sys\win32\win_qgl.cpp" />
     <ClCompile Include="sys\win32\win_savegame.cpp" />
     <ClCompile Include="sys\win32\win_session_local.cpp" />
     <ClCompile Include="sys\win32\win_shared.cpp" />
