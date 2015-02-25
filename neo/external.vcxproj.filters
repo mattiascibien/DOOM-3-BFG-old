@@ -13,6 +13,9 @@
     <Filter Include="glew">
       <UniqueIdentifier>{211b3184-ccb9-44a3-b94a-83db7baa1e1a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="minizip">
+      <UniqueIdentifier>{e9d3a4dd-bd5c-4c9e-830d-218baceea6e5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="libs\dxerr\dxerr.cpp">
@@ -207,6 +210,21 @@
     <ClCompile Include="libs\zlib\zutil.c">
       <Filter>zlib</Filter>
     </ClCompile>
+    <ClCompile Include="libs\minizip\ioapi.c">
+      <Filter>minizip</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\minizip\iowin32.c">
+      <Filter>minizip</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\minizip\mztools.c">
+      <Filter>minizip</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\minizip\unzip.c">
+      <Filter>minizip</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\minizip\zip.c">
+      <Filter>minizip</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libs\dxerr\dxerr.h">
@@ -277,6 +295,24 @@
     </ClInclude>
     <ClInclude Include="libs\zlib\zutil.h">
       <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minizip\crypt.h">
+      <Filter>minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minizip\ioapi.h">
+      <Filter>minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minizip\iowin32.h">
+      <Filter>minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minizip\mztools.h">
+      <Filter>minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minizip\unzip.h">
+      <Filter>minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minizip\zip.h">
+      <Filter>minizip</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

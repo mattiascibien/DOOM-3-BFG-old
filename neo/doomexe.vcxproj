@@ -169,9 +169,7 @@
     <ClInclude Include="framework\PlayerProfile.h" />
     <ClInclude Include="framework\Serializer.h" />
     <ClInclude Include="framework\TokenParser.h" />
-    <ClInclude Include="framework\Unzip.h" />
     <ClInclude Include="framework\UsercmdGen.h" />
-    <ClInclude Include="framework\Zip.h" />
     <ClInclude Include="renderer\AutoRender.h" />
     <ClInclude Include="renderer\AutoRenderBink.h" />
     <ClInclude Include="renderer\BinaryImage.h" />
@@ -339,9 +337,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="framework\TokenParser.cpp" />
-    <ClCompile Include="framework\Unzip.cpp" />
     <ClCompile Include="framework\UsercmdGen.cpp" />
-    <ClCompile Include="framework\Zip.cpp" />
     <ClCompile Include="renderer\AutoRender.cpp" />
     <ClCompile Include="renderer\AutoRenderBink.cpp" />
     <ClCompile Include="renderer\BinaryImage.cpp" />

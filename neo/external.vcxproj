@@ -64,6 +64,11 @@
     <ClCompile Include="libs\jpeg-9a\jutils.c" />
     <ClCompile Include="libs\jpeg-9a\transupp.c" />
     <ClCompile Include="libs\dxerr\dxerr.cpp" />
+    <ClCompile Include="libs\minizip\ioapi.c" />
+    <ClCompile Include="libs\minizip\iowin32.c" />
+    <ClCompile Include="libs\minizip\mztools.c" />
+    <ClCompile Include="libs\minizip\unzip.c" />
+    <ClCompile Include="libs\minizip\zip.c" />
     <ClCompile Include="libs\zlib\adler32.c" />
     <ClCompile Include="libs\zlib\compress.c" />
     <ClCompile Include="libs\zlib\crc32.c" />
@@ -93,6 +98,12 @@
     <ClInclude Include="libs\jpeg-9a\jpeglib.h" />
     <ClInclude Include="libs\jpeg-9a\jversion.h" />
     <ClInclude Include="libs\jpeg-9a\transupp.h" />
+    <ClInclude Include="libs\minizip\crypt.h" />
+    <ClInclude Include="libs\minizip\ioapi.h" />
+    <ClInclude Include="libs\minizip\iowin32.h" />
+    <ClInclude Include="libs\minizip\mztools.h" />
+    <ClInclude Include="libs\minizip\unzip.h" />
+    <ClInclude Include="libs\minizip\zip.h" />
     <ClInclude Include="libs\zlib\crc32.h" />
     <ClInclude Include="libs\zlib\deflate.h" />
     <ClInclude Include="libs\zlib\gzguts.h" />

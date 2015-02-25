@@ -111,9 +111,6 @@
     <ClInclude Include="framework\Licensee.h">
       <Filter>Framework</Filter>
     </ClInclude>
-    <ClInclude Include="framework\Unzip.h">
-      <Filter>Framework</Filter>
-    </ClInclude>
     <ClInclude Include="framework\UsercmdGen.h">
       <Filter>Framework</Filter>
     </ClInclude>
@@ -483,9 +480,6 @@
     <ClInclude Include="renderer\AutoRender.h">
       <Filter>Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="framework\Zip.h">
-      <Filter>Framework</Filter>
-    </ClInclude>
     <ClInclude Include="renderer\AutoRenderBink.h">
       <Filter>Renderer</Filter>
     </ClInclude>
@@ -582,9 +576,6 @@
       <Filter>Framework</Filter>
     </ClCompile>
     <ClCompile Include="framework\KeyInput.cpp">
-      <Filter>Framework</Filter>
-    </ClCompile>
-    <ClCompile Include="framework\Unzip.cpp">
       <Filter>Framework</Filter>
     </ClCompile>
     <ClCompile Include="framework\UsercmdGen.cpp">
@@ -1047,9 +1038,6 @@
       <Filter>Renderer</Filter>
     </ClCompile>
     <ClCompile Include="framework\precompiled.cpp">
-      <Filter>Framework</Filter>
-    </ClCompile>
-    <ClCompile Include="framework\Zip.cpp">
       <Filter>Framework</Filter>
     </ClCompile>
     <ClCompile Include="renderer\AutoRenderBink.cpp">
