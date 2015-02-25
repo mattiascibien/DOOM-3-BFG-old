@@ -490,6 +490,12 @@ void idCmdSystemLocal::ExecuteTokenizedString( const idCmdArgs &args ) {
 		return;		// no tokens
 	}
 
+	// ignore comment
+	if (strcmp(args.Argv(0), "#") == 0)
+	{
+		return;
+	}
+
 	// check registered command functions	
 	for ( prev = &commands; *prev; prev = &cmd->next ) {
 		cmd = *prev;
