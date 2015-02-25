@@ -236,5 +236,8 @@
     <ClInclude Include="libs\jpeg-9a\transupp.h">
       <Filter>jpeg-9a</Filter>
     </ClInclude>
+    <ClInclude Include="libs\jpeg-9a\jconfig.h">
+      <Filter>jpeg-9a</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

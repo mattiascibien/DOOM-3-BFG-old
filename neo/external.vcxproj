@@ -81,6 +81,7 @@
   <ItemGroup>
     <ClInclude Include="libs\dxerr\dxerr.h" />
     <ClInclude Include="libs\jpeg-9a\cderror.h" />
+    <ClInclude Include="libs\jpeg-9a\jconfig.h" />
     <ClInclude Include="libs\jpeg-9a\jdct.h" />
     <ClInclude Include="libs\jpeg-9a\jerror.h" />
     <ClInclude Include="libs\jpeg-9a\jinclude.h" />
