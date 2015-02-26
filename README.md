@@ -1,15 +1,7 @@
 Doom 3 BFG Edition GPL Source Code
 ==================================
 
-This file contains the following sections:
-
-GENERAL NOTES
-LICENSE
-
-GENERAL NOTES
-=============
-
-Game data and patching:
+Game data and patching
 -----------------------
 
 This source release does not contain any game data, the game data is still
@@ -21,7 +13,7 @@ Note that Doom 3 BFG Edition is available from the Steam store at
 http://store.steampowered.com/app/208200/
 
 
-Compiling on win32:
+Compiling on win32
 -------------------
 
 A project file for Microsoft Visual Studio 2010 is provided in neo\doom3.sln
@@ -32,35 +24,24 @@ If it does not reside in "C:\Program Files (x86)\Microsoft DirectX SDK (June 201
 you will need to update the project files accordingly.
 
 
-Steam:
+Steam
 ------
 The Doom 3 BFG Edition GPL Source Code release does not include functionality for integrating with 
 Steam.  This includes roaming profiles, achievements, leaderboards, matchmaking, the overlay, or
 any other Steam features.
 
 
-Bink:
+Bink
 -----
 
 The Doom 3 BFG Edition GPL Source Code release does not include functionality for rendering Bink Videos.
 
 
-Back End Rendering of Stencil Shadows:
+Back End Rendering of Stencil Shadows
 --------------------------------------
 
 The Doom 3 BFG Edition GPL Source Code release does not include functionality enabling rendering
 of stencil shadows via the "depth fail" method, a functionality commonly known as "Carmack's Reverse".
-
-
-Other platforms, updated source code, security issues:
-------------------------------------------------------
-
-If you have obtained this source code several weeks after the time of release,
-it is likely that you can find modified and improved versions of the engine in
-various open source projects across the internet.
-
-Depending what is your interest with the source code, those may be a better starting point.
-
 
 LICENSE
 =======
@@ -71,11 +52,13 @@ ADDITIONAL TERMS:  The Doom 3 BFG Edition GPL Source Code is also subject to cer
 
 EXCLUDED CODE:  The code described below and contained in the Doom 3 BFG Edition GPL Source Code release is not part of the Program covered by the GPL and is expressly excluded from its terms.  You are solely responsible for obtaining from the copyright holder a license for such code and complying with the applicable license terms.
 
+
 JPEG library
 -----------------------------------------------------------------------------
-neo/renderer/jpeg-6/*
+neo/libs/jpeg-9a
 
-Copyright (C) 1991-1995, Thomas G. Lane
+This software is copyright (C) 1991-2014, Thomas G. Lane, Guido Vollbeding.
+All Rights Reserved except as specified below.
 
 Permission is hereby granted to use, copy, modify, and distribute this
 software (or portions thereof) for any purpose, without fee, subject to these
@@ -95,33 +78,27 @@ These conditions apply to any software derived from or based on the IJG code,
 not just to the unmodified library.  If you use our work, you ought to
 acknowledge us.
 
-NOTE: unfortunately the README that came with our copy of the library has
-been lost, so the one from release 6b is included instead. There are a few
-'glue type' modifications to the library to make it easier to use from
+NOTE:  There are a few 'glue type' modifications to the library to make it easier to use from
 the engine, but otherwise the dependency can be easily cleaned up to a
 better release of the library.
 
 zlib library
 ---------------------------------------------------------------------------
-neo/framework/zlib/*
+neo/libs/zlib/*
 
-Copyright (C) 1995-2005 Jean-loup Gailly and Mark Adler
+Copyright (C) 1995-2013 Jean-loup Gailly and Mark Adler
 
-This software is provided 'as-is', without any express or implied
-warranty.  In no event will the authors be held liable for any damages
-arising from the use of this software.
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
 
-Permission is granted to anyone to use this software for any purpose,
-including commercial applications, and to alter it and redistribute it
-freely, subject to the following restrictions:
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
 
-1. The origin of this software must not be misrepresented; you must not
- claim that you wrote the original software. If you use this software
- in a product, an acknowledgment in the product documentation would be
- appreciated but is not required.
-2. Altered source versions must be plainly marked as such, and must not be
- misrepresented as being the original software.
-3. This notice may not be removed or altered from any source distribution.
+  1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
 
 Base64 implementation
 ---------------------------------------------------------------------------
@@ -129,9 +106,10 @@ neo/idlib/Base64.cpp
 
 Copyright (c) 1996 Lars Wirzenius.  All rights reserved.
 
-June 14 2003: TTimo <ttimo@idsoftware.com>
-	modified + endian bug fixes
-	http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=197039
+> June 14 2003: TTimo <ttimo@idsoftware.com>
+> modified + endian bug fixes
+
+> http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=197039
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -158,11 +136,9 @@ POSSIBILITY OF SUCH DAMAGE.
 
 IO for uncompress .zip files using zlib
 ---------------------------------------------------------------------------
-neo/framework/Unzip.cpp
-neo/framework/Unzip.h
+neo/libs/minizip/*
 
-Copyright (C) 1998 Gilles Vollant
-zlib is Copyright (C) 1995-1998 Jean-loup Gailly and Mark Adler
+MiniZip - Copyright (c) 1998-2010 - by Gilles Vollant - version 1.1 64 bits from Mathias Svensson
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -217,35 +193,10 @@ CRC32 Checksum
 neo/idlib/hashing/CRC32.cpp
 Copyright (C) 1995-1998 Mark Adler
 
-OpenGL headers
----------------------------------------------------------------------------
-neo/renderer/OpenGL/glext.h
-neo/renderer/OpenGL/wglext.h
-
-Copyright (c) 2007-2012 The Khronos Group Inc.
-
-Permission is hereby granted, free of charge, to any person obtaining a
-copy of this software and/or associated documentation files (the
-"Materials"), to deal in the Materials without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Materials, and to
-permit persons to whom the Materials are furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be included
-in all copies or substantial portions of the Materials.
-
-THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.
 
 Timidity
 ---------------------------------------------------------------------------
-doomclassic/timidity/*
+neo/libs/timidity/*
 
 Copyright (c) 1995 Tuukka Toivonen 
 
