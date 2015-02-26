@@ -184,7 +184,8 @@ idMenuHandler_HUD::ShowTip
 */
 void idMenuHandler_HUD::ShowTip( const char* title, const char* tip, bool autoHide )
 {
-	autoHideTip = autoHideTip;
+	//PVS Studio: variable assigned to itself
+	autoHideTip = autoHide;
 	tipStartTime = gameLocal.time;
 	hiding = false;
 	idMenuScreen_HUD* screen = GetHud();

@@ -47,7 +47,8 @@ bool IsWriteCombined( void* base )
 	if( size == 0 )
 	{
 		DWORD error = GetLastError();
-		error = error;
+		//PVS Studio: variable assigned to itself
+		//error = error;
 		return false;
 	}
 	bool isWriteCombined = ( ( info.AllocationProtect & PAGE_WRITECOMBINE ) != 0 );
@@ -867,7 +868,6 @@ float* idJointBuffer::MapBuffer( bufferMapType_t mapType ) const
 	void* buffer = NULL;
 	
 	glBindBufferARB( GL_UNIFORM_BUFFER, reinterpret_cast< GLuint >( apiObject ) );
-	numBytes = numBytes;
 	assert( GetOffset() == 0 );
 	//buffer = glMapBufferARB( GL_UNIFORM_BUFFER, GL_WRITE_ONLY_ARB );
 	buffer = glMapBufferRange( GL_UNIFORM_BUFFER, 0, GetAllocedSize(), GL_MAP_WRITE_BIT | GL_MAP_INVALIDATE_RANGE_BIT | GL_MAP_UNSYNCHRONIZED_BIT );
