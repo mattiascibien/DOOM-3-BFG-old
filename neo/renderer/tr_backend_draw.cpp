@@ -1670,6 +1670,8 @@ static void RB_StencilShadowPass( const drawSurf_t* drawSurfs, const viewLight_t
 		else
 		{
 			// Z-fail
+			glStencilOpSeparate(GL_FRONT, GL_KEEP, GL_DECR, GL_KEEP);
+			glStencilOpSeparate(GL_BACK, GL_KEEP, GL_INCR, GL_KEEP);
 		}
 		
 		
