@@ -2,9 +2,9 @@
 ===========================================================================
 
 Doom 3 BFG Edition GPL Source Code
-Copyright (C) 1993-2012 id Software LLC, a ZeniMax Media company. 
+Copyright (C) 1993-2012 id Software LLC, a ZeniMax Media company.
 
-This file is part of the Doom 3 BFG Edition GPL Source Code ("Doom 3 BFG Edition Source Code").  
+This file is part of the Doom 3 BFG Edition GPL Source Code ("Doom 3 BFG Edition Source Code").
 
 Doom 3 BFG Edition Source Code is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -46,8 +46,8 @@ If you have questions concerning this license or the applicable additional terms
 #undef ID_LITTLE_ENDIAN
 
 #if defined(_WIN32)
-	// _WIN32 always defined
-	// _WIN64 also defined for x64 target
+// _WIN32 always defined
+// _WIN64 also defined for x64 target
 /*
 	#if !defined( _MANAGED )
 		#if !defined( _WIN64 )
@@ -70,10 +70,10 @@ If you have questions concerning this license or the applicable additional terms
 	#endif
 */
 
-	#define ID_PC
-	#define ID_PC_WIN
-	#define ID_WIN32
-	#define ID_LITTLE_ENDIAN
+#define ID_PC
+#define ID_PC_WIN
+#define ID_WIN32
+#define ID_LITTLE_ENDIAN
 #else
 #error Unknown Platform
 #endif
@@ -119,7 +119,7 @@ If you have questions concerning this license or the applicable additional terms
 
 // we should never rely on this define in our code. this is here so dodgy external libraries don't get confused
 #ifndef WIN32
-	#define WIN32
+#define WIN32
 #endif
 
 #endif
