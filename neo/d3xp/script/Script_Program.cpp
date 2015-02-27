@@ -724,8 +724,7 @@ idVarDef::SetObject
 void idVarDef::SetObject( idScriptObject* object )
 {
 	assert( typeDef );
-	//PVS Studio: variable assigned to itself
-	//initialized = initialized;
+	initialized = initialized;
 	assert( typeDef->Inherits( &type_object ) );
 	*value.objectPtrPtr = object;
 }
