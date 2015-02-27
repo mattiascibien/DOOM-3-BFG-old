@@ -373,6 +373,19 @@ static void R_CheckPortableExtensions()
 									  0, NULL, true );
 		}
 	}
+
+
+	// GL_EXT_FRAMEBUFFER_OBJECT
+	glConfig.framebufferObjectAvailable = R_CheckExtension("GL_EXT_framebuffer_object");
+	if (glConfig.framebufferObjectAvailable)
+	{
+		glGetIntegerv(GL_MAX_RENDERBUFFER_SIZE, &glConfig.maxRenderbufferSize);
+		common->Printf("...Maximum Framebuffer Size: %d\n", glConfig.maxRenderbufferSize);
+	}
+	else
+	{
+		idLib::Warning("GL_EXT_framebuffer_object not available. Some effects may not be available");
+	}
 	
 	// GL_ARB_multitexture
 	if( !glConfig.multitextureAvailable )

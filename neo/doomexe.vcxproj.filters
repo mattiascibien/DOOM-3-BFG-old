@@ -522,9 +522,6 @@
     <ClInclude Include="renderer\OpenGL\gl_FrameBuffer.h">
       <Filter>Renderer\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="renderer\OpenGL\gl_RenderToTextture.h">
-      <Filter>Renderer\OpenGL</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cm\CollisionModel_contacts.cpp">
@@ -1113,9 +1110,6 @@
       <Filter>Sys\Win32</Filter>
     </ClCompile>
     <ClCompile Include="renderer\OpenGL\gl_FrameBuffer.cpp">
-      <Filter>Renderer\OpenGL</Filter>
-    </ClCompile>
-    <ClCompile Include="renderer\OpenGL\gl_RenderToTextture.cpp">
       <Filter>Renderer\OpenGL</Filter>
     </ClCompile>
   </ItemGroup>

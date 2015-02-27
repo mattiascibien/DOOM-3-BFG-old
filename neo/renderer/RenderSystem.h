@@ -129,6 +129,8 @@ struct glconfig_t
 	bool				occlusionQueryAvailable;
 	bool				debugOutputAvailable;
 	bool				swapControlTearAvailable;
+
+	bool				framebufferObjectAvailable;
 	
 	stereo3DMode_t		stereo3Dmode;
 	int					nativeScreenWidth; // this is the native screen width resolution of the renderer
@@ -140,6 +142,8 @@ struct glconfig_t
 	bool				isStereoPixelFormat;
 	bool				stereoPixelFormatAvailable;
 	int					multisamples;
+
+	int					maxRenderbufferSize;
 	
 	// Screen separation for stereoscopic rendering is set based on this.
 	// PC vid code sets this, converting from diagonals / inches / whatever as needed.
