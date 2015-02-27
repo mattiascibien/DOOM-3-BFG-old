@@ -141,9 +141,13 @@ GLEW - OpenGL Extension Wrangler
 neo/libs/glew/*
 
 The OpenGL Extension Wrangler Library
+
 Copyright (C) 2002-2007, Milan Ikits <milan ikits[]ieee org>
+
 Copyright (C) 2002-2007, Marcelo E. Magallon <mmagallo[]debian org>
+
 Copyright (C) 2002, Lev Povalahev
+
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without 
