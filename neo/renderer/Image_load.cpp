@@ -517,7 +517,7 @@ void idImage::Bind()
 		if( tmu->current2DMap != texnum )
 		{
 			tmu->current2DMap = texnum;
-			glBindMultiTextureEXT( GL_TEXTURE0_ARB + texUnit, GL_TEXTURE_2D, texnum );
+			glBindMultiTextureEXT( GL_TEXTURE0 + texUnit, GL_TEXTURE_2D, texnum );
 		}
 	}
 	else if( opts.textureType == TT_CUBIC )
@@ -525,7 +525,7 @@ void idImage::Bind()
 		if( tmu->currentCubeMap != texnum )
 		{
 			tmu->currentCubeMap = texnum;
-			glBindMultiTextureEXT( GL_TEXTURE0_ARB + texUnit, GL_TEXTURE_CUBE_MAP_EXT, texnum );
+			glBindMultiTextureEXT( GL_TEXTURE0 + texUnit, GL_TEXTURE_CUBE_MAP_EXT, texnum );
 		}
 	}
 	

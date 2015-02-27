@@ -298,11 +298,11 @@ static void R_CheckCvars()
 	{
 		if( r_multiSamples.GetInteger() > 0 )
 		{
-			glEnable( GL_MULTISAMPLE_ARB );
+			glEnable( GL_MULTISAMPLE );
 		}
 		else
 		{
-			glDisable( GL_MULTISAMPLE_ARB );
+			glDisable( GL_MULTISAMPLE );
 		}
 	}
 	

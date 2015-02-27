@@ -796,7 +796,7 @@ static void RB_ShowSilhouette()
 					continue;
 				}
 				
-				glBindBufferARB( GL_ARRAY_BUFFER_ARB, ( GLuint )vertexBuffer.GetAPIObject() );
+				glBindBuffer( GL_ARRAY_BUFFER, ( GLuint )vertexBuffer.GetAPIObject() );
 				int vertOffset = vertexBuffer.GetOffset();
 				
 				glVertexPointer( 3, GL_FLOAT, sizeof( idShadowVert ), ( void* )vertOffset );

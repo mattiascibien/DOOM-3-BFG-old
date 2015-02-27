@@ -309,8 +309,8 @@ static void R_CheckPortableExtensions()
 	glConfig.fragmentProgramAvailable = R_CheckExtension( "GL_ARB_fragment_program" );
 	if( glConfig.fragmentProgramAvailable )
 	{
-		glGetIntegerv( GL_MAX_TEXTURE_COORDS_ARB, ( GLint* )&glConfig.maxTextureCoords );
-		glGetIntegerv( GL_MAX_TEXTURE_IMAGE_UNITS_ARB, ( GLint* )&glConfig.maxTextureImageUnits );
+		glGetIntegerv( GL_MAX_TEXTURE_COORDS, ( GLint* )&glConfig.maxTextureCoords );
+		glGetIntegerv( GL_MAX_TEXTURE_IMAGE_UNITS, ( GLint* )&glConfig.maxTextureImageUnits );
 	}
 	
 	// GLSL, core in OpenGL > 2.0
