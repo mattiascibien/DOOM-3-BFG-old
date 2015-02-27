@@ -37,10 +37,10 @@ class idGLFrameBuffer
 {
 public:
 	idGLFrameBuffer();
-	~idGLFrameBuffer();
+	virtual ~idGLFrameBuffer();
 
-	void bind();
-	void unbind();
+	virtual void bind();
+	virtual void unbind();
 private:
 	GLuint frameBufferName;
 };

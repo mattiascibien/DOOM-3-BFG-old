@@ -106,6 +106,7 @@
     <ClCompile>
       <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</TreatWarningAsError>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(DXSDK_DIR)\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile>
       <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</TreatWarningAsError>
@@ -113,6 +114,7 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(DXSDK_DIR)\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Retail|Win32'">$(DXSDK_DIR)\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Retail|Win32'">NDEBUG;%(PreprocessorDefinitions);ID_RETAIL</PreprocessorDefinitions>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ImageXex />
     <ImageXex />
@@ -204,6 +206,8 @@
     <ClInclude Include="renderer\ModelDecal.h" />
     <ClInclude Include="renderer\ModelManager.h" />
     <ClInclude Include="renderer\ModelOverlay.h" />
+    <ClInclude Include="renderer\OpenGL\gl_FrameBuffer.h" />
+    <ClInclude Include="renderer\OpenGL\gl_RenderToTextture.h" />
     <ClInclude Include="renderer\RenderContext.h" />
     <ClInclude Include="renderer\RenderLog.h" />
     <ClInclude Include="renderer\RenderProgs.h" />
@@ -391,9 +395,11 @@
     <ClCompile Include="renderer\ModelDecal.cpp" />
     <ClCompile Include="renderer\ModelManager.cpp" />
     <ClCompile Include="renderer\ModelOverlay.cpp" />
+    <ClCompile Include="renderer\OpenGL\gl_FrameBuffer.cpp" />
     <ClCompile Include="renderer\OpenGL\gl_GraphicsAPIWrapper.cpp" />
     <ClCompile Include="renderer\OpenGL\gl_image.cpp" />
     <ClCompile Include="renderer\OpenGL\gl_backend.cpp" />
+    <ClCompile Include="renderer\OpenGL\gl_RenderToTextture.cpp" />
     <ClCompile Include="renderer\RenderProgs.cpp" />
     <ClCompile Include="renderer\RenderProgs_GLSL.cpp" />
     <ClCompile Include="renderer\RenderWorld_defs.cpp" />
