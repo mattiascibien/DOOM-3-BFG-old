@@ -142,6 +142,7 @@
     <ClCompile Include="d3xp\menus\MenuHandler_Scoreboard.cpp" />
     <ClCompile Include="d3xp\menus\MenuHandler_Shell.cpp" />
     <ClCompile Include="d3xp\menus\MenuScreen.cpp" />
+    <ClCompile Include="d3xp\menus\MenuScreen_Shell_Mods.cpp" />
     <ClCompile Include="d3xp\menus\MenuScreen_HUD.cpp" />
     <ClCompile Include="d3xp\menus\MenuScreen_PDA_Inventory.cpp" />
     <ClCompile Include="d3xp\menus\MenuScreen_PDA_UserData.cpp" />

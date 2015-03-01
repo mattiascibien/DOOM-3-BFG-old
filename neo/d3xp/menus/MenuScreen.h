@@ -1849,4 +1849,51 @@ inline void InvitePartyOrFriends()
 	}
 }
 
+
+//*
+//================================================
+//idMenuScreen_Shell_Mods
+//================================================
+//*/
+class idMenuScreen_Shell_Mods : public idMenuScreen
+{
+public:
+
+	struct modOption_t
+	{
+		modOption_t()
+		{
+			description = "";
+			name = "";
+		};
+
+		modOption_t(const char* n, const char* d)
+		{
+			description = d;
+			name = n;
+		}
+
+		const char* 	description;
+		const char* 	name;
+	};
+
+	idMenuScreen_Shell_Mods() :
+		options(NULL),
+		btnBack(NULL)
+	{
+	}
+	virtual void				Initialize(idMenuHandler* data);
+	virtual void				Update();
+	virtual void				ShowScreen(const mainMenuTransition_t transitionType);
+	virtual void				HideScreen(const mainMenuTransition_t transitionType);
+	virtual bool				HandleAction(idWidgetAction& action, const idWidgetEvent& event, idMenuWidget* widget, bool forceHandled = false);
+
+	void						SetupModOptions();
+
+private:
+	idMenuWidget_DynamicList* 	options;
+	idMenuWidget_Button*			btnBack;
+	idList< modOption_t, TAG_IDLIB_LIST_MENU >		modOptions;
+};
+
 #endif
