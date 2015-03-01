@@ -34,30 +34,168 @@ const static int NUM_MOD_OPTIONS = 8;
 
 void idMenuScreen_Shell_Mods::Initialize(idMenuHandler* data)
 {
-	
+	idMenuScreen::Initialize(data);
+
+	if (data != NULL)
+	{
+		menuGUI = data->GetGUI();
+	}
+
+	SetSpritePath("menuSettings");
+
+	options = new (TAG_SWF) idMenuWidget_DynamicList();
+	options->SetNumVisibleOptions(NUM_MOD_OPTIONS);
+	options->SetWrappingAllowed(true);
+
+	while (options->GetChildren().Num() < NUM_MOD_OPTIONS)
+	{
+		idMenuWidget_Button* const buttonWidget = new(TAG_SWF) idMenuWidget_Button();
+		buttonWidget->AddEventAction(WIDGET_EVENT_PRESS).Set(WIDGET_ACTION_PRESS_FOCUSED, options->GetChildren().Num());
+		buttonWidget->Initialize(data);
+		options->AddChild(buttonWidget);
+	}
+
+	options->Initialize(data);
+
+	AddChild(options);
+
+	btnBack = new(TAG_SWF) idMenuWidget_Button();
+	btnBack->Initialize(data);
+	btnBack->SetLabel("MAIN MENU");
+	btnBack->SetSpritePath(GetSpritePath(), "info", "btnBack");
+	btnBack->AddEventAction(WIDGET_EVENT_PRESS).Set(WIDGET_ACTION_GO_BACK);
+
+	AddChild(btnBack);
+
+	SetupModOptions();
+	options->AddEventAction(WIDGET_EVENT_SCROLL_DOWN).Set(new(TAG_SWF) idWidgetActionHandler(options, WIDGET_ACTION_EVENT_SCROLL_DOWN_START_REPEATER, WIDGET_EVENT_SCROLL_DOWN));
+	options->AddEventAction(WIDGET_EVENT_SCROLL_UP).Set(new(TAG_SWF) idWidgetActionHandler(options, WIDGET_ACTION_EVENT_SCROLL_UP_START_REPEATER, WIDGET_EVENT_SCROLL_UP));
+	options->AddEventAction(WIDGET_EVENT_SCROLL_DOWN_RELEASE).Set(new(TAG_SWF) idWidgetActionHandler(options, WIDGET_ACTION_EVENT_STOP_REPEATER, WIDGET_EVENT_SCROLL_DOWN_RELEASE));
+	options->AddEventAction(WIDGET_EVENT_SCROLL_UP_RELEASE).Set(new(TAG_SWF) idWidgetActionHandler(options, WIDGET_ACTION_EVENT_STOP_REPEATER, WIDGET_EVENT_SCROLL_UP_RELEASE));
+	options->AddEventAction(WIDGET_EVENT_SCROLL_DOWN_LSTICK).Set(new(TAG_SWF) idWidgetActionHandler(options, WIDGET_ACTION_EVENT_SCROLL_DOWN_START_REPEATER, WIDGET_EVENT_SCROLL_DOWN_LSTICK));
+	options->AddEventAction(WIDGET_EVENT_SCROLL_UP_LSTICK).Set(new(TAG_SWF) idWidgetActionHandler(options, WIDGET_ACTION_EVENT_SCROLL_UP_START_REPEATER, WIDGET_EVENT_SCROLL_UP_LSTICK));
+	options->AddEventAction(WIDGET_EVENT_SCROLL_DOWN_LSTICK_RELEASE).Set(new(TAG_SWF) idWidgetActionHandler(options, WIDGET_ACTION_EVENT_STOP_REPEATER, WIDGET_EVENT_SCROLL_DOWN_LSTICK_RELEASE));
+	options->AddEventAction(WIDGET_EVENT_SCROLL_UP_LSTICK_RELEASE).Set(new(TAG_SWF) idWidgetActionHandler(options, WIDGET_ACTION_EVENT_STOP_REPEATER, WIDGET_EVENT_SCROLL_UP_LSTICK_RELEASE));
+
 }
 
 void idMenuScreen_Shell_Mods::Update()
 {
-	
+	if (menuData != NULL)
+	{
+		idMenuWidget_CommandBar* cmdBar = menuData->GetCmdBar();
+		if (cmdBar != NULL)
+		{
+			cmdBar->ClearAllButtons();
+			idMenuWidget_CommandBar::buttonInfo_t* buttonInfo;
+			buttonInfo = cmdBar->GetButton(idMenuWidget_CommandBar::BUTTON_JOY2);
+			if (menuData->GetPlatform() != 2)
+			{
+				buttonInfo->label = "#str_00395";
+			}
+			buttonInfo->action.Set(WIDGET_ACTION_GO_BACK);
+
+			buttonInfo = cmdBar->GetButton(idMenuWidget_CommandBar::BUTTON_JOY1);
+			if (menuData->GetPlatform() != 2)
+			{
+				buttonInfo->label = "#str_SWF_SELECT";
+			}
+			buttonInfo->action.Set(WIDGET_ACTION_PRESS_FOCUSED);
+		}
+	}
+
+	idSWFScriptObject& root = GetSWFObject()->GetRootObject();
+	if (BindSprite(root))
+	{
+		idSWFTextInstance* heading = GetSprite()->GetScriptObject()->GetNestedText("info", "txtHeading");
+		if (heading != NULL)
+		{
+			heading->SetText("DEV");
+			heading->SetStrokeInfo(true, 0.75f, 1.75f);
+		}
+
+		idSWFSpriteInstance* gradient = GetSprite()->GetScriptObject()->GetNestedSprite("info", "gradient");
+		if (gradient != NULL && heading != NULL)
+		{
+			gradient->SetXPos(heading->GetTextLength());
+		}
+	}
+
+	if (btnBack != NULL)
+	{
+		btnBack->BindSprite(root);
+	}
+
+	idMenuScreen::Update();
 }
 
 void idMenuScreen_Shell_Mods::ShowScreen(const mainMenuTransition_t transitionType)
 {
-	
+	idMenuScreen::ShowScreen(transitionType);
 }
 
 void idMenuScreen_Shell_Mods::HideScreen(const mainMenuTransition_t transitionType)
 {
-	
+	idMenuScreen::HideScreen(transitionType);
 }
 
 bool idMenuScreen_Shell_Mods::HandleAction(idWidgetAction& action, const idWidgetEvent& event, idMenuWidget* widget, bool forceHandled)
 {
-	return false;
+	if (menuData == NULL)
+	{
+		return true;
+	}
+
+	if (menuData->ActiveScreen() != SHELL_AREA_DEV)
+	{
+		return false;
+	}
+
+	widgetAction_t actionType = action.GetType();
+	const idSWFParmList& parms = action.GetParms();
+
+	switch (actionType)
+	{
+	case WIDGET_ACTION_GO_BACK:
+	{
+		menuData->SetNextScreen(SHELL_AREA_ROOT, MENU_TRANSITION_SIMPLE);
+		return true;
+	}
+	case WIDGET_ACTION_PRESS_FOCUSED:
+	{
+		if (options == NULL)
+		{
+			return true;
+		}
+
+		int selectionIndex = options->GetViewIndex();
+		if (parms.Num() == 1)
+		{
+			selectionIndex = parms[0].ToInteger();
+		}
+
+		if (options->GetFocusIndex() != selectionIndex - options->GetViewOffset())
+		{
+			options->SetFocusIndex(selectionIndex);
+			options->SetViewIndex(options->GetViewOffset() + selectionIndex);
+		}
+
+		int mapIndex = options->GetViewIndex();
+		if ((mapIndex < modOptions.Num()) && (modOptions[mapIndex].name != NULL))
+		{
+			//TODO: load mod	
+		}
+
+		return true;
+	}
+	}
+	
+	return idMenuWidget::HandleAction(action, event, widget, forceHandled);
 }
 
 void idMenuScreen_Shell_Mods::SetupModOptions()
 {
-	
+	//char* f;
+	//int len;
+	//idStr filename = "description.txt";
 }
