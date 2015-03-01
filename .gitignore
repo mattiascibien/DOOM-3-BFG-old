@@ -234,3 +234,5 @@ build
 astyle.exe
 patch.exe
 neo/game/gamesys/GameTypeInfo.h
+*.tlog
+neo/amplitude/Retail/amplitude.tlog/amplitude.lastbuildstate
