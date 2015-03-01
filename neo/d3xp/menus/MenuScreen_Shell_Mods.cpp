@@ -45,6 +45,7 @@ void idMenuScreen_Shell_Mods::Initialize(idMenuHandler* data)
 
 	options = new (TAG_SWF) idMenuWidget_DynamicList();
 	options->SetNumVisibleOptions(NUM_MOD_OPTIONS);
+	options->SetSpritePath(GetSpritePath(), "info", "options");
 	options->SetWrappingAllowed(true);
 
 	while (options->GetChildren().Num() < NUM_MOD_OPTIONS)
@@ -110,7 +111,7 @@ void idMenuScreen_Shell_Mods::Update()
 		idSWFTextInstance* heading = GetSprite()->GetScriptObject()->GetNestedText("info", "txtHeading");
 		if (heading != NULL)
 		{
-			heading->SetText("DEV");
+			heading->SetText("MODS");
 			heading->SetStrokeInfo(true, 0.75f, 1.75f);
 		}
 
@@ -146,7 +147,7 @@ bool idMenuScreen_Shell_Mods::HandleAction(idWidgetAction& action, const idWidge
 		return true;
 	}
 
-	if (menuData->ActiveScreen() != SHELL_AREA_DEV)
+	if (menuData->ActiveScreen() != SHELL_AREA_MODS)
 	{
 		return false;
 	}
