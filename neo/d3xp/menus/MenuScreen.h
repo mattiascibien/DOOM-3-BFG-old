@@ -882,11 +882,18 @@ public:
 	virtual bool				HandleAction( idWidgetAction& action, const idWidgetEvent& event, idMenuWidget* widget, bool forceHandled = false );
 	
 	void						SetupDevOptions();
+
+	~idMenuScreen_Shell_Dev()
+	{
+		delete parsed;
+	}
 	
 private:
 	idMenuWidget_DynamicList* 	options;
 	idMenuWidget_Button*			btnBack;
 	idList< devOption_t, TAG_IDLIB_LIST_MENU >		devOptions;
+
+	idCmdArgs* parsed;
 };
 
 //*
