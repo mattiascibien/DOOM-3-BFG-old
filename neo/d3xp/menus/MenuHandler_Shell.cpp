@@ -526,7 +526,7 @@ void idMenuHandler_Shell::Initialize( const char* swfFile, idSoundWorld* sw )
 	menuBar = new( TAG_SWF ) idMenuWidget_MenuBar();
 	menuBar->SetSpritePath( "pcBar" );
 	menuBar->Initialize( this );
-	menuBar->SetNumVisibleOptions( MAX_MENU_OPTIONS );
+	menuBar->SetNumVisibleOptions( MAX_MENU_OPTIONS);
 	menuBar->SetWrappingAllowed( true );
 	menuBar->SetButtonSpacing( 45.0f );
 	while( menuBar->GetChildren().Num() < MAX_MENU_OPTIONS )
@@ -838,9 +838,7 @@ void idMenuHandler_Shell::SetupPCOptions()
 #endif
 			navOptions.Append( "#str_swf_campaign" );	// singleplayer
 			navOptions.Append( "#str_swf_multiplayer" );	// multiplayer
-			//mattiascibien: Mods Support
-			navOptions.Append("Mods");
-
+			navOptions.Append("MODS"); 			//mattiascibien: mods
 			navOptions.Append( "#str_swf_settings" );	// settings
 			navOptions.Append( "#str_swf_credits" );	// credits
 			navOptions.Append( "#str_swf_quit" );	// quit
@@ -874,6 +872,7 @@ void idMenuHandler_Shell::SetupPCOptions()
 				buttonWidget->SetDescription( "#str_02215" );
 			}
 			index++;
+			buttonWidget = dynamic_cast<idMenuWidget_MenuButton*>(&menuBar->GetChildByIndex(index));
 			if (buttonWidget != NULL)
 			{
 				buttonWidget->ClearEventActions();
