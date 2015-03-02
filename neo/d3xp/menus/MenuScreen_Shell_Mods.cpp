@@ -183,8 +183,12 @@ bool idMenuScreen_Shell_Mods::HandleAction(idWidgetAction& action, const idWidge
 
 		int modIndex = options->GetViewIndex();
 		if ((modIndex < modOptions.Num()) && (modOptions[modIndex].dir != NULL))
-		{
-			//TODO: load mod	
+		{	
+			idStr args = "+set fs_game ";
+			args.Append(modOptions[modIndex].dir);
+			unsigned int exitCode;
+			Sys_Exec(Sys_EXEPath(), "", args.c_str(), NULL, NULL, 0, exitCode);
+			common->Quit();
 		}
 
 		return true;
