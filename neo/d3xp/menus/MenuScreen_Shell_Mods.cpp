@@ -181,8 +181,8 @@ bool idMenuScreen_Shell_Mods::HandleAction(idWidgetAction& action, const idWidge
 			options->SetViewIndex(options->GetViewOffset() + selectionIndex);
 		}
 
-		int mapIndex = options->GetViewIndex();
-		if ((mapIndex < modOptions.Num()) && (modOptions[mapIndex].name != NULL))
+		int modIndex = options->GetViewIndex();
+		if ((modIndex < modOptions.Num()) && (modOptions[modIndex].dir != NULL))
 		{
 			//TODO: load mod	
 		}
@@ -196,7 +196,23 @@ bool idMenuScreen_Shell_Mods::HandleAction(idWidgetAction& action, const idWidge
 
 void idMenuScreen_Shell_Mods::SetupModOptions()
 {
+	//From original doom3 source
 	//char* f;
 	//int len;
 	//idStr filename = "description.txt";
+
+	modOptions.Append(modOption_t(BASE_GAMEDIR, GAME_NAME));
+
+	//TODO: add additional mods
+
+	idList< idList< idStr, TAG_IDLIB_LIST_MENU >, TAG_IDLIB_LIST_MENU > menuOptions;
+
+	for (int i = 0; i < modOptions.Num(); ++i)
+	{
+		idList< idStr > option;
+		option.Append(modOptions[i].description);
+		menuOptions.Append(option);
+	}
+
+	options->SetListData(menuOptions);
 }

@@ -1864,17 +1864,17 @@ public:
 		modOption_t()
 		{
 			description = "";
-			name = "";
+			dir = "";
 		};
 
-		modOption_t(const char* n, const char* d)
+		modOption_t(const char* dir, const char* desc)
 		{
-			description = d;
-			name = n;
+			description = desc;
+			this->dir = dir;
 		}
 
 		const char* 	description;
-		const char* 	name;
+		const char* 	dir;
 	};
 
 	idMenuScreen_Shell_Mods() :
