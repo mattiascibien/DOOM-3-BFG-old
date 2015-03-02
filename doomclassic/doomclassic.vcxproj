@@ -147,6 +147,9 @@
     <ClInclude Include="doom\w_wad.h" />
     <ClInclude Include="doom\z_zone.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\neo\neo.licenseheader" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D87ADC61-3968-4A89-824F-01365AB6BD88}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

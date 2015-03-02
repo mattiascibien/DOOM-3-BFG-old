@@ -17,6 +17,9 @@
   <ItemGroup>
     <ClCompile Include="amplitude.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\neo.licenseheader" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{57DBA8C7-2BBF-44CA-8189-600F90DC29DD}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

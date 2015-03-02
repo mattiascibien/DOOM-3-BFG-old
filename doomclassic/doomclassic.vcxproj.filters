@@ -408,4 +408,7 @@
       <Filter>Doom</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\neo\neo.licenseheader" />
+  </ItemGroup>
 </Project>

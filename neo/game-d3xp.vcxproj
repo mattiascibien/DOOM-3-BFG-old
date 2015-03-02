@@ -327,6 +327,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="d3xp\Game.def" />
+    <None Include="neo.licenseheader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

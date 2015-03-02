@@ -491,5 +491,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="d3xp\Game.def" />
+    <None Include="neo.licenseheader" />
   </ItemGroup>
 </Project>

@@ -396,4 +396,7 @@
       <Filter>timidity</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="neo.licenseheader" />
+  </ItemGroup>
 </Project>
