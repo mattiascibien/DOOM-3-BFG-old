@@ -47,10 +47,10 @@ If you have questions concerning this license or the applicable additional terms
 #include "rc/doom_resource.h"
 #include "../../renderer/tr_local.h"
 
+idCVar r_openGLMajor("r_openGLMajor", "3", CVAR_INTEGER, "Determines the OpenGL major Version to use", 2, 4);
+idCVar r_openGLMinor("r_openGLMinor", "2", CVAR_INTEGER, "Determines the OpenGL minor Version to use", 2, 5);
 
-idCVar r_useOpenGL32( "r_useOpenGL32", "1", CVAR_INTEGER, "0 = OpenGL 2.0, 1 = OpenGL 3.2 compatibility profile, 2 = OpenGL 3.2 core profile", 0, 2 );
-
-
+idCVar r_useCoreProfile("r_useCoreProfile", "0", CVAR_BOOL, "Determines to use an OpenGL compatibility (0) or core (1) profile");
 
 /*
 ========================
@@ -347,16 +347,15 @@ CreateOpenGLContextOnDC
 */
 static HGLRC CreateOpenGLContextOnDC( const HDC hdc, const bool debugContext )
 {
-	int useOpenGL32 = r_useOpenGL32.GetInteger();
 	HGLRC m_hrc = NULL;
 	
 	for( int i = 0; i < 2; i++ )
 	{
-		const int glMajorVersion = ( useOpenGL32 != 0 ) ? 3 : 2;
-		const int glMinorVersion = ( useOpenGL32 != 0 ) ? 2 : 0;
+		const int glMajorVersion = r_openGLMajor.GetInteger();
+		const int glMinorVersion = r_openGLMinor.GetInteger();
 		const int glDebugFlag = debugContext ? WGL_CONTEXT_DEBUG_BIT_ARB : 0;
-		const int glProfileMask = ( useOpenGL32 != 0 ) ? WGL_CONTEXT_PROFILE_MASK_ARB : 0;
-		const int glProfile = ( useOpenGL32 == 1 ) ? WGL_CONTEXT_COMPATIBILITY_PROFILE_BIT_ARB : ( ( useOpenGL32 == 2 ) ? WGL_CONTEXT_CORE_PROFILE_BIT_ARB : 0 );
+		const int glProfileMask = (glMajorVersion > 2) ? WGL_CONTEXT_PROFILE_MASK_ARB : 0;
+		const int glProfile = r_useCoreProfile.GetBool() ? WGL_CONTEXT_CORE_PROFILE_BIT_ARB : WGL_CONTEXT_COMPATIBILITY_PROFILE_BIT_ARB;
 		const int attribs[] =
 		{
 			WGL_CONTEXT_MAJOR_VERSION_ARB, glMajorVersion,
@@ -374,7 +373,6 @@ static HGLRC CreateOpenGLContextOnDC( const HDC hdc, const bool debugContext )
 		}
 		
 		idLib::Printf( "failed to create OpenGL %d.%d context\n", glMajorVersion, glMinorVersion );
-		useOpenGL32 = 0;	// fall back to OpenGL 2.0
 	}
 	
 	if( m_hrc == NULL )
