@@ -1,6 +1,8 @@
 Doom 3 BFG Edition GPL Source Code
 ==================================
 
+[![Build status](https://ci.appveyor.com/api/projects/status/ri2dp2y99yw34wuw?svg=true)](https://ci.appveyor.com/project/mattiascibien/doom-3-bfg)
+
 Game data and patching
 -----------------------
 
