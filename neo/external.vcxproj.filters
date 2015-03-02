@@ -7,9 +7,6 @@
     <Filter Include="zlib">
       <UniqueIdentifier>{2d5b407e-8075-4eda-b4d1-1327db0580c6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="dxerr">
-      <UniqueIdentifier>{24f0375b-8658-41ae-a422-dbb7200e589e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="glew">
       <UniqueIdentifier>{211b3184-ccb9-44a3-b94a-83db7baa1e1a}</UniqueIdentifier>
     </Filter>
@@ -21,9 +18,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="libs\dxerr\dxerr.cpp">
-      <Filter>dxerr</Filter>
-    </ClCompile>
     <ClCompile Include="libs\glew\glew.c">
       <Filter>glew</Filter>
     </ClCompile>
@@ -269,9 +263,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="libs\dxerr\dxerr.h">
-      <Filter>dxerr</Filter>
-    </ClInclude>
     <ClInclude Include="libs\jpeg-9a\cderror.h">
       <Filter>jpeg-9a</Filter>
     </ClInclude>

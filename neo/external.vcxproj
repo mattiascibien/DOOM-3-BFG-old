@@ -63,7 +63,6 @@
     <ClCompile Include="libs\jpeg-9a\jquant2.c" />
     <ClCompile Include="libs\jpeg-9a\jutils.c" />
     <ClCompile Include="libs\jpeg-9a\transupp.c" />
-    <ClCompile Include="libs\dxerr\dxerr.cpp" />
     <ClCompile Include="libs\minizip\ioapi.c" />
     <ClCompile Include="libs\minizip\iowin32.c" />
     <ClCompile Include="libs\minizip\mztools.c" />
@@ -99,7 +98,6 @@
     <ClCompile Include="libs\zlib\zutil.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="libs\dxerr\dxerr.h" />
     <ClInclude Include="libs\jpeg-9a\cderror.h" />
     <ClInclude Include="libs\jpeg-9a\jconfig.h" />
     <ClInclude Include="libs\jpeg-9a\jdct.h" />
