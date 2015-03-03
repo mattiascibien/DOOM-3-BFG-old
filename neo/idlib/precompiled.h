@@ -160,4 +160,8 @@ const int MAX_EXPRESSION_REGISTERS = 4096;
 #undef max
 #include <algorithm>	// for min / max / swap
 
+#ifdef HAS_VLD
+#include <vld.h>
+#endif
+
 #endif /* !__PRECOMPILED_H__ */
