@@ -78,8 +78,6 @@ If you have questions concerning this license or the applicable additional terms
 #error Unknown Platform
 #endif
 
-#define ID_OPENGL
-
 /*
 ================================================================================================
 
@@ -90,7 +88,11 @@ If you have questions concerning this license or the applicable additional terms
 
 #ifdef ID_PC_WIN
 
+#if defined(ID_PC_WIN64)
+#define CPUSTRING						"x64"
+#else
 #define	CPUSTRING						"x86"
+#endif
 
 #define	BUILD_STRING					"win-" CPUSTRING
 #define BUILD_OS_ID						0
