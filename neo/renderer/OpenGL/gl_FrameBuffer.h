@@ -31,7 +31,7 @@ If you have questions concerning this license or the applicable additional terms
 #ifndef GL_FRAMEBUFFER_H
 #define GL_FRAMWBUFFER_H
 
-#include "../../idlib/precompiled.h"
+#include "../idlib/precompiled.h"
 
 class idGLFrameBuffer
 {

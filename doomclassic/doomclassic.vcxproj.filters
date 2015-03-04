@@ -195,6 +195,9 @@
     <ClCompile Include="doom\i_sound_win32.cpp">
       <Filter>Doom</Filter>
     </ClCompile>
+    <ClCompile Include="doom\Precompiled.cpp">
+      <Filter>Doom</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doom\am_map.h">
@@ -405,6 +408,9 @@
       <Filter>Doom</Filter>
     </ClInclude>
     <ClInclude Include="doom\z_zone.h">
+      <Filter>Doom</Filter>
+    </ClInclude>
+    <ClInclude Include="doom\Precompiled.h">
       <Filter>Doom</Filter>
     </ClInclude>
   </ItemGroup>

@@ -38,6 +38,10 @@
     <ClCompile Include="doom\m_menu.cpp" />
     <ClCompile Include="doom\m_misc.cpp" />
     <ClCompile Include="doom\m_random.cpp" />
+    <ClCompile Include="doom\Precompiled.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="doom\p_ceilng.cpp" />
     <ClCompile Include="doom\p_doors.cpp" />
     <ClCompile Include="doom\p_enemy.cpp" />
@@ -115,6 +119,7 @@
     <ClInclude Include="doom\m_misc.h" />
     <ClInclude Include="doom\m_random.h" />
     <ClInclude Include="doom\m_swap.h" />
+    <ClInclude Include="doom\Precompiled.h" />
     <ClInclude Include="doom\p_inter.h" />
     <ClInclude Include="doom\p_local.h" />
     <ClInclude Include="doom\p_mobj.h" />
@@ -197,12 +202,13 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <MinimalRebuild>false</MinimalRebuild>
+      <PrecompiledHeaderFile>Precompiled.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -212,12 +218,13 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeaderFile>Precompiled.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
