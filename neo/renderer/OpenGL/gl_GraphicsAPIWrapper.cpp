@@ -290,7 +290,6 @@ void GL_SetDefaultState()
 	glPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
 	
 	// These should never be changed
-	glShadeModel( GL_SMOOTH );
 	glEnable( GL_DEPTH_TEST );
 	glEnable( GL_BLEND );
 	glEnable( GL_SCISSOR_TEST );
